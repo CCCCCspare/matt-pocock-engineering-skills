@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Engineering workflow">
+  <rect width="512" height="512" rx="112" fill="#111827"/>
+  <path d="M126 166h260v52H126zm0 64h166v52H126zm0 64h260v52H126z" fill="#F9FAFB"/>
+  <circle cx="354" cy="256" r="38" fill="#38BDF8"/>
+</svg>
