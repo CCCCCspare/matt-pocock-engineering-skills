@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "matt-pocock-engineering-skills",
+  "version": "1.0.0",
+  "description": "ChatGPT-compatible package of Matt Pocock's 25 formal engineering and productivity skills.",
+  "author": {
+    "name": "CCCCCspare",
+    "url": "https://github.com/CCCCCspare"
+  },
+  "homepage": "https://github.com/CCCCCspare/matt-pocock-engineering-skills",
+  "repository": "https://github.com/CCCCCspare/matt-pocock-engineering-skills",
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "code-review",
+    "tdd",
+    "architecture",
+    "productivity"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Matt Pocock Engineering Skills",
+        "shortDescription": "25 engineering workflows",
+        "longDescription": "An unofficial ChatGPT and Codex packaging of Matt Pocock's 25 formal engineering and productivity skills. It preserves the original workflows, references, scripts, and OpenAI skill metadata while adapting Claude-specific invocation fields for OpenAI plugin hosts.",
+        "developerName": "CCCCCspare",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Plan and scope engineering work",
+          "Design and review code",
+          "Diagnose bugs with feedback loops",
+          "Use test-driven development",
+          "Model domains and architecture",
+          "Create specifications and tickets",
+          "Conduct structured interviews",
+          "Produce handoffs and learning plans"
+        ],
+        "defaultPrompt": [
+          "Ask which Matt Pocock workflow fits this engineering task.",
+          "Review this code change against standards and its specification.",
+          "Turn this conversation into a concrete implementation plan."
+        ],
+        "brandColor": "#111827",
+        "composerIcon": "./assets/composer-icon.svg",
+        "logo": "./assets/logo.svg"
+      }
+    }
+  }
+}

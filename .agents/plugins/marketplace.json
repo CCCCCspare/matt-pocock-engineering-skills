@@ -1,0 +1,23 @@
+{
+  "name": "cccccspare-personal-plugins",
+  "interface": {
+    "displayName": "CCCCCspare Personal Plugins"
+  },
+  "plugins": [
+    {
+      "name": "matt-pocock-engineering-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/matt-pocock-engineering-skills"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools",
+      "interface": {
+        "displayName": "Matt Pocock Engineering Skills"
+      }
+    }
+  ]
+}
