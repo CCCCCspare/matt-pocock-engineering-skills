@@ -3,6 +3,7 @@ name: Validate plugin
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,3 +17,21 @@ jobs:
         with:
           node-version: "22"
       - run: node scripts/validate-plugin.mjs
+      - name: Build ChatGPT web upload package
+        run: |
+          cd plugins
+          zip -r -X ../matt-pocock-engineering-skills-1.0.0.zip matt-pocock-engineering-skills
+      - name: Verify upload package
+        run: |
+          mkdir upload-check
+          unzip -q matt-pocock-engineering-skills-1.0.0.zip -d upload-check
+          test -f upload-check/matt-pocock-engineering-skills/plugin.json
+          test -f upload-check/matt-pocock-engineering-skills/.codex-plugin/plugin.json
+          test "$(find upload-check/matt-pocock-engineering-skills/skills -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l)" -eq 25
+      - name: Upload ChatGPT web package
+        uses: actions/upload-artifact@v4
+        with:
+          name: chatgpt-web-upload-package
+          path: matt-pocock-engineering-skills-1.0.0.zip
+          if-no-files-found: error
+          retention-days: 30
